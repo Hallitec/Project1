@@ -6,54 +6,65 @@
     background-size: cover;
 }
 #topbanner {
-    padding-left: 450px;
+    float: center;
     border: 5px double black;
-    width: 900px;
+    border-radius: 5px;
     position: fixed;
     height: fit-content;
     width: fit-content;
     text-align: center;
     padding: 10px 10px;
-    left: 25%;
-    top: 40px;
+    margin-top: 100px;
+    left: 30%;
+    top: 20px;
 }
 
 #text-container {
     height: fit-content;
     width: 900px;
     position: fixed;
-    top: 150px;
+    top: 120px;
     text-align: center;
 
 }
 
-#orewa {
-    position: fixed;
-    left: 500px;
-    font-size: 80px;
-    font-weight: bold;
-    color: black;
-    font-family: stencil;
-    animation: orewa-text infinite 5s;
-
+#name{
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    font-size: 30px;
+    font-family: stencil; color: black bold;
+    animation-name: name;
+    animation-iteration-count: 1; 
+    animation-duration: 8s;
 }
 
-#beauty {
-    position: fixed;
-    right: 700px;
-    font-size: 80px;
+#studentid {
+    position: absolute;
+    left: 500px;
+    top: 150px;
+    font-size: 30px;
+    font-family: stencil; color: black bold;
+    animation-name: studentid;
+    animation-iteration-count: 1; 
+    animation-duration: 8s;
+}
+
+#orewa-text {
+    position: absolute;
+    float: center;
+    top: -200px;
+    left: 250px;
+    font-size: 90px;
     font-weight: bold;
-    color: white;
-    font-family: stencil;
-    animation: beauty-text 2 5s;
 }
 
 #sunset-img{
     width: 200px;
     height: 150px;
     position: relative;
-    right: 0px;
-    animation: orewa-sunset 5s;
+    float: right;
+    animation: sunset 5s;
     animation-iteration-count: 1;
 }
 
@@ -61,8 +72,8 @@
     width: 200px;
     height: 150px;
     position: relative;
-    left: 0px;  
-    animation: orewa-surfing 5s;
+    float: left;
+    animation: surf 5s;
     animation-iteration-count: 1;
 }
 
@@ -70,38 +81,47 @@
     width: 200px;
     height: 150px;
     position: relative;
-    right: 0px;
-    animation: orewa-surf 5s;
+    float: right;
+    animation: surf-2 5s;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
 }
 
 #orewa-beach {
     width: 200px;
     height: 150px;
     position: relative;
-    right: 0px;
-    animation: orewa-beach 5s;
+    float: left;
+    animation: beach 5s;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
 }
 
-@keyframes orewa-surfing {
-    from {top: 200px;}
-    to {top: 0px;}
+#page-links{
+    border-style: solid;
+    border-radius: 5px;
+    border-color: black;
+    text-align: center;
+    position: relative;
+    float: right;
+    top: 300px;
+    margin: 25px;
+    height: 100px;
+    width: 100px;
+}
+
+@keyframes surf {
+    from { top: 250px; }
+    to { top: 0px; }
     0% { opacity: 0 }
     25% { opacity: 0.5 }
     50% { opacity: 0.75 }
-    100% { opacity: 1 }
+    100% { opacity: 1}
+
 }
 
-@keyframes orewa-sunset {
-    from { top: -250px }
-    to { top: 0px }
-    0% { opacity: 0 }
-    25% { opacity: 0.5 }
-    50% { opacity: 0.75 }
-    100% { opacity: 1 }
-}
-
-@keyframes orewa-beach {
-    from { left: -250px }
+@keyframes sunset {
+    from { left: 250px; }
     to { left: 0px }
     0% { opacity: 0 }
     25% { opacity: 0.5 }
@@ -109,21 +129,34 @@
     100% { opacity: 1 }
 }
 
-@keyframes orewa-surf {
-    from { right: -250px }
-    to { right: 0px }
+@keyframes surf-2{
+    from {top: 250px;}
+    to {top: 0px;}
     0% { opacity: 0 }
     25% { opacity: 0.5 }
     50% { opacity: 0.75 }
     100% { opacity: 1 }
 }
 
-@keyframes orewa-text {
-    from { right: 250px }
-    to { right: 1000px }
+@keyframes beach {
+    from { left: 250px; }
+    to { left: 0px }
+    0% { visibility: hidden }
+    25% { opacity: 0.5 }
+    50% { opacity: 0.75 }
+    100% { opacity: 1 }
 }
 
-@keyframes beauty-text {
-    from { left: 400px }
-    to { left: 1000px }
+@keyframes name {
+    0% { color: white; font-size: 0}
+    25% { color: lightblue; }
+    50% { color: lightgreen; }
+    100% { font-size: 30px; }
+}
+
+@keyframes studentid {
+    0% { color: white; font-size: 0}
+    25% { color: lightblue; }
+    50% { color: lightgreen; }
+    100% { font-size: 30px; }
 }

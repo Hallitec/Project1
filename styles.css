@@ -1,5 +1,5 @@
 :root {
-    background: url(images/orewa-cropped.jpg) no-repeat center fixed;
+    background: url(images/orewa-background.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7,56 +7,73 @@
 }
 #topbanner {
     float: center;
-    border: 5px double black;
-    border-radius: 5px;
     position: fixed;
     height: fit-content;
     width: fit-content;
     text-align: center;
-    padding: 10px 10px;
     margin-top: 100px;
-    left: 30%;
-    top: 20px;
+    left: 35%;
+}
+
+#beach-images {
+    position: fixed;
+    border-style: double;
+    border-radius: 10px;
+    border-width: 5px;
+    padding: 5px;
 }
 
 #text-container {
-    height: fit-content;
-    width: 900px;
-    position: fixed;
-    top: 120px;
+    position: relative;
     text-align: center;
-
+    top: 0;
 }
 
 #name{
-    position: absolute;
-    left: 0px;
-    top: 150px;
-    font-size: 30px;
+    position: fixed;
+    top: 265px;
+    left: 670px;
+    font-size: 20px;
     font-family: stencil; color: black bold;
-    animation-name: name;
+    animation-name: myName;
     animation-iteration-count: 1; 
     animation-duration: 8s;
 }
 
 #studentid {
-    position: absolute;
-    left: 500px;
-    top: 150px;
-    font-size: 30px;
+    position: fixed;
+    top: 265px;
+    right: 630px;
+    font-size: 20px;
     font-family: stencil; color: black bold;
-    animation-name: studentid;
+    animation-name: myID;
     animation-iteration-count: 1; 
     animation-duration: 8s;
 }
 
 #orewa-text {
-    position: absolute;
+    position: fixed;
     float: center;
-    top: -200px;
-    left: 250px;
+    top: -75px;
+    left: 850px;
     font-size: 90px;
-    font-weight: bold;
+    font-family: Algerian; color: white;
+    animation: orewa-text 5s;
+    animation-delay: 15s;
+    animation-iteration-count: 2;
+}
+
+#word-change {
+    position: fixed;
+    float: center;
+    top: -75px;
+    left: 750px;
+    font-size: 90px;
+    font-family: algerian; color: white;
+    visibility: hidden;
+    animation: word-change 5s;
+    animation-delay: 23s;
+    animation-iteration-count: 1;
 }
 
 #sunset-img{
@@ -64,7 +81,8 @@
     height: 150px;
     position: relative;
     float: right;
-    animation: sunset 5s;
+    animation: sunset-img 5s ease-out;
+    animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
 
@@ -73,17 +91,8 @@
     height: 150px;
     position: relative;
     float: left;
-    animation: surf 5s;
-    animation-iteration-count: 1;
-}
-
-#orewa-surf {
-    width: 200px;
-    height: 150px;
-    position: relative;
-    float: right;
-    animation: surf-2 5s;
-    animation-delay: 5s;
+    animation: surf-img 5s ease-out;
+    animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
 
@@ -92,9 +101,48 @@
     height: 150px;
     position: relative;
     float: left;
-    animation: beach 5s;
-    animation-delay: 5s;
+    animation: beach-img 5s ease-out;
+    animation-fill-mode: forwards;
     animation-iteration-count: 1;
+}
+
+#orewa-surf-2 {
+    width: 200px;
+    height: 150px;
+    top: 300px;
+    left: 682px;
+    position: fixed;
+    visibility: hidden;
+    animation: surf-2 8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
+}
+
+#orewa-beach-2 {
+    width: 200px;
+    height: 150px;
+    position: fixed;
+    visibility: hidden;
+    top: 300px;
+    left: 882px;
+    animation: beach-2 8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
+}
+
+#orewa-jetski {
+    width: 200px;
+    height: 150px;
+    position: fixed;
+    visibility: hidden;
+    top: 300px;
+    animation: jetski 8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
+
 }
 
 #page-links{
@@ -104,15 +152,36 @@
     text-align: center;
     position: relative;
     float: right;
-    top: 300px;
+    background-color: lightblue;
+    top: 250px;
     margin: 25px;
     height: 100px;
     width: 100px;
 }
 
-@keyframes surf {
-    from { top: 250px; }
-    to { top: 0px; }
+@keyframes myName {
+    0% { color: white; font-size: 0}
+    25% { color: grey; }
+    50% { color: black; }
+    100% { font-size: 20px; }
+}
+
+@keyframes myID {
+    0% { color: white; font-size: 0}
+    25% { color: grey; }
+    50% { color: black; }
+    100% { font-size: 20px; }
+}
+
+@keyframes surf-img {
+    from {
+        visibility: visible;
+        top: 250px;
+    }
+    to {
+        top: 0px;
+        visibility: hidden;
+    }
     0% { opacity: 0 }
     25% { opacity: 0.5 }
     50% { opacity: 0.75 }
@@ -120,43 +189,109 @@
 
 }
 
-@keyframes sunset {
-    from { left: 250px; }
-    to { left: 0px }
+@keyframes sunset-img {
+    from {
+        left: 250px; 
+    }
+    to {
+        left: 0px;
+        visibility: hidden; 
+    }
     0% { opacity: 0 }
     25% { opacity: 0.5 }
     50% { opacity: 0.75 }
     100% { opacity: 1 }
 }
 
-@keyframes surf-2{
-    from {top: 250px;}
-    to {top: 0px;}
+@keyframes beach-img {
+    from { 
+        left: -250px; 
+    }
+    to { 
+        left: 0px;
+        visibility: hidden; 
+    }
     0% { opacity: 0 }
     25% { opacity: 0.5 }
     50% { opacity: 0.75 }
     100% { opacity: 1 }
 }
 
-@keyframes beach {
-    from { left: 250px; }
-    to { left: 0px }
-    0% { visibility: hidden }
-    25% { opacity: 0.5 }
-    50% { opacity: 0.75 }
-    100% { opacity: 1 }
+@keyframes beach-2 {
+    from {
+        top: 250px;
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        top: 118px;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
-@keyframes name {
-    0% { color: white; font-size: 0}
-    25% { color: lightblue; }
-    50% { color: lightgreen; }
-    100% { font-size: 30px; }
+@keyframes surf-2 {
+    from {
+        top: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        top: 118px;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
-@keyframes studentid {
-    0% { color: white; font-size: 0}
-    25% { color: lightblue; }
-    50% { color: lightgreen; }
-    100% { font-size: 30px; }
+@keyframes jetski {
+    from {
+        top: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+    to { 
+        top: 118px;
+        opacity: 1;
+        visibility: visible;
+    }
 }
+
+@keyframes orewa-text {
+    from {
+        top: -75px;
+        left: 600px;
+    }
+    to {
+        top: -75px;
+        left: 850px;
+        visibility: visible;
+        color: green;
+    }
+    0% { color: white; opacity: 1}
+    25% { color: yellow; opacity: 0.75}
+    50% { color: red; opacity: 0.5 }
+    75% { color: blue; opacity: 0.25; }
+    100% { color: green; opacity: 0; }
+}
+
+@keyframes word-change {
+    from {
+        top: -75px;
+        left: 1000px;
+        opacity: 0;
+    }
+    to {
+        top: -75px;
+        left: 1500px;
+        opacity: 1;
+        visibility: visible;
+    }
+    0% { color: white; }
+    25% { color: yellow; }
+    50% { color: red; }
+    75% { color: blue; }
+    100% { color: green; }
+}
+
+
+

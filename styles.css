@@ -264,8 +264,6 @@
     to {
         top: -75px;
         left: 850px;
-        visibility: visible;
-        color: green;
     }
     0% { color: white; opacity: 1}
     25% { color: yellow; opacity: 0.75}

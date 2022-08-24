@@ -12,7 +12,7 @@
     width: fit-content;
     text-align: center;
     margin-top: 100px;
-    left: 35%;
+    left: 28%;
 }
 
 #beach-images {
@@ -31,8 +31,8 @@
 
 #name{
     position: fixed;
-    top: 265px;
-    left: 670px;
+    top: 42%;
+    left: 25%;
     font-size: 20px;
     font-family: stencil; color: black bold;
     animation-name: myName;
@@ -42,8 +42,8 @@
 
 #studentid {
     position: fixed;
-    top: 265px;
-    right: 630px;
+    top: 42%;
+    right: 25%;
     font-size: 20px;
     font-family: stencil; color: black bold;
     animation-name: myID;
@@ -54,8 +54,8 @@
 #orewa-text {
     position: fixed;
     float: center;
-    top: -75px;
-    left: 850px;
+    top: -12%;
+    left: 40%;
     font-size: 90px;
     font-family: Algerian; color: white;
     animation: orewa-text 5s;
@@ -66,8 +66,8 @@
 #word-change {
     position: fixed;
     float: center;
-    top: -75px;
-    left: 750px;
+    top: -12%;
+    left: 70%;
     font-size: 90px;
     font-family: algerian; color: white;
     visibility: hidden;
@@ -109,8 +109,8 @@
 #orewa-surf-2 {
     width: 200px;
     height: 150px;
-    top: 300px;
-    left: 682px;
+    top: 30%;
+    left: 29%;
     position: fixed;
     visibility: hidden;
     animation: surf-2 8s ease-out;
@@ -124,8 +124,8 @@
     height: 150px;
     position: fixed;
     visibility: hidden;
-    top: 300px;
-    left: 882px;
+    top: 30%;
+    left: 44%;
     animation: beach-2 8s ease-out;
     animation-fill-mode: forwards;
     animation-delay: 6s;
@@ -137,7 +137,8 @@
     height: 150px;
     position: fixed;
     visibility: hidden;
-    top: 300px;
+    top: 30%;
+    left: 58%;
     animation: jetski 8s ease-out;
     animation-fill-mode: forwards;
     animation-delay: 6s;
@@ -148,15 +149,106 @@
 #page-links{
     border-style: solid;
     border-radius: 5px;
-    border-color: black;
+    border-color: aquamarine;
     text-align: center;
-    position: relative;
-    float: right;
-    background-color: lightblue;
-    top: 250px;
+    position: fixed;
     margin: 25px;
     height: 100px;
     width: 100px;
+    bottom: 0%;
+}
+
+#form1-box {
+    position: fixed;
+    background-color: white;
+    height: fit-content;
+    width: 250px;
+    top: 50%;
+    left: 41%;
+    border-style: solid;
+}
+
+#form1-page {   
+    padding: 25px;
+    width: 170px;
+}
+
+#arrival {
+    position: relative;
+    left: 25%;
+    width: 200x;
+    margin: 5px;
+}
+
+#departure {
+    position: relative;
+    left: 23%;
+    margin: 10px;
+}
+
+#smokers {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+}
+
+#smokers-button {
+    position: relative;
+    left: 0;
+}
+
+#pets {
+    position: relative;
+    left: 15px;
+    margin: 5px;
+}
+
+#pet-button {
+    position: relative;
+    left: 10px;
+}
+
+#gotosecondpage {
+    position: relative;
+    bottom: -20px;
+    left: 50px;
+}
+
+#form2-box {
+    position: fixed;
+    background-color: white;
+    height: fit-content;
+    width: 250px;
+    top: 50%;
+    left: 41%;
+    border-style: solid;
+}
+
+#form2-page {
+    padding: 25px;
+    width: 170px;
+}
+
+#firstname {
+    margin: 10px;
+}
+
+#lastname {
+    margin: 10px;
+}
+
+
+#gotosecondpage {
+    height: 25px;
+    width: 100px;
+}
+
+#footer {
+    position: fixed;
+    background-color: lightblue;
+    width: 100%;
+    height: 2.5rem;
+    bottom: 0;
 }
 
 @keyframes myName {
@@ -290,6 +382,5 @@
     75% { color: blue; }
     100% { color: green; }
 }
-
 
 

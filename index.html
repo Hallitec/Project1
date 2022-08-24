@@ -25,66 +25,17 @@
     </div>
     <div id="form1-box">
         <form id="form1-page" action="index.html" method="get">
-            <label id="arrival" for="arrival">Arrival date</label>
-            <input type="date" id="arrival" name="arrival" value="arrival">
-            <label id="departure" for="departure">Departure date</label>
-            <input type="date" id="departure" name="departure" value="departure">
-            <label id="smokers" for="smokers">Smokers</label>
-            <input type="radio" id="smokers-button" name="smoker" value="smoker">
-            <label id="pets" for="pets">Pets</label>
-            <input type="radio" id="pet-button" name="pets" value="pets">
-            <input id="gotosecondpage" type="submit" value="Next">
+
         </form>
     <div id="form2-box">
         <form id="form2-page" action="index.html" method="get">
-            <input type="text" id="firstname" name="firstname" placeholder="first name" onchange="changeInputHandlerSecondPage()"/>
-            <label id="firstname" for="firstname"></label>
-            <input type="text" id="lastname" name="lastname" placeholder="last name" onchange="changeInputHandlerSecondPage()"/>
-            <label id="lastname" for="lastname"></label>
-            <input type="text" id="email" name="email" placeholder="email address" onchange="changeInputHandlerSecondPage()"/>
-            <input id="gotofirstpage" type="submit" value="Previous">
+
         </form>
     </div>
     </div>
     <script>
-        function goToNextPage(){
-    document.getElementById("firstPage").style.display = 'none';
-    document.getElementById("secondPage").style.display = 'block';
-}
+   
 
-function goToPreviousPage(){
-    document.getElementById("firstPage").style.display = 'block';
-    document.getElementById("secondPage").style.display = 'none';
-}
-
-function dataSettingOnload(){
-    document.getElementById("secondPage").style.display = 'none';
-    document.getElementById("startDate").value = localStorage.getItem('startDate');
-    document.getElementById("endDate").value = localStorage.getItem('endDate');
-    document.getElementById("smokers").value = localStorage.getItem('smokers');
-    document.getElementById("pets").value = localStorage.getItem('pets');
-    document.getElementById("firstName").value = localStorage.getItem('firstName');
-    document.getElementById("lastName").value = localStorage.getItem('lastName');
-}
-
-function changeInputHandler(){
-    let startDate = document.getElementById("startDate").value;
-    let endDate = document.getElementById("endDate").value;
-    let smokers = document.getElementById("smokers").value;
-    let pets = document.getElementById("pets").value;
-    localStorage.setItem('startDate', startDate);
-    localStorage.setItem('endDate', endDate);
-    localStorage.setItem('smokers', smokers);
-    localStorage.setItem('pets', pets);
-}
-
-function changeInputHandlerSecondPage(){
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    localStorage.setItem('firstName', firstName);
-    localStorage.setItem('lastName', lastName);
-}
-window.onload = dataSettingOnload();
     </script>
     <footer id="footer">
         <a href="/Storyboards_AssignmentOne.pdf">Storyboard</a>

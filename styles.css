@@ -158,7 +158,7 @@
     bottom: 0%;
 }
 
-#form1-box {
+#firstPage {
     position: fixed;
     background-color: white;
     height: fit-content;
@@ -168,39 +168,22 @@
     border-style: solid;
 }
 
-#form1-page {   
-    padding: 25px;
-    width: 170px;
-}
-
-#arrival {
+#arrival-box {
     position: relative;
-    left: 25%;
+    left: 22px;
     width: 200x;
     margin: 5px;
 }
 
-#departure {
+#departure-box {
     position: relative;
-    left: 23%;
     margin: 10px;
 }
 
-#smokers {
+#radio-box {
     position: relative;
-    left: 10px;
+    left: 80px;
     margin: 10px;
-}
-
-#smokers-button {
-    position: relative;
-    left: 0;
-}
-
-#pets {
-    position: relative;
-    left: 15px;
-    margin: 5px;
 }
 
 #pet-button {

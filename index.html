@@ -23,19 +23,46 @@
                 </a>
         </div>
     </div>
-    <div id="form1-box">
-        <form id="form1-page" action="index.html" method="get">
-
-        </form>
-    <div id="form2-box">
-        <form id="form2-page" action="index.html" method="get">
-
-        </form>
-    </div>
+    <div id="firstPage">
+        <div id="arrival-box">
+            <label for="arrivalDate">Arrival Date</label>
+            <input type="date" id="arrivalDate" value="" onchange="doThis()"/>
+        </div>
+        <div id="departure-box">
+            <label for="departureDate">Departure Date</label>
+            <input type="date" id="departureDate" value="" onchange="doThis()"/>
+        </div>
+        <div id="radio-box">
+            <label for="pets">Pets</label>
+            <input type="radio" id="pets" value="" onchange="doThis()"/>
+            <label for="smokers">Smokers</label>
+            <input type="radio" id="smokers" value="" onchange="doThis()"/>
+        </div>
+        <div id="nextPage">
+            <button onclick="goToNextPage()">Next</button>
+        </div>
     </div>
     <script>
-   
+        function goToNextPage(){
+            document.getElementById("firstPage").style.Display = 'none';
+            document.getElementById("secondPage").style.Display = 'block';
+        }
 
+        function goToPreviousPage(){
+            document.getElementByID("firstPage").style.Display = 'block';
+            document.getELementById("secondPage").style.Dispaly = 'none';
+        }
+
+        function changeInputHandler(){
+            let arrivalDate = document.getElementById("arrivalDate").value;
+            let departureDate = document.getElementById("departureDate").value;
+            let smokers = document.getElementById("smokers").value;
+            let pets = document.getElementById("pets").value;
+            localStorage.setItem("arrivalDate", arrivalDate);
+            localStorage.setItem("departureDate", departureDate);
+            localStorage.setItem("smokers", smokers);
+            localStorage.setItem("pets", pets);
+        }
     </script>
     <footer id="footer">
         <a href="/Storyboards_AssignmentOne.pdf">Storyboard</a>

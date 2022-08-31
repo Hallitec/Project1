@@ -24,49 +24,143 @@
         </div>
     </div>
     <div id="storyboard-links">
-        <a href="/Storyboards_AssignmentOne.pdf" ></a>Storyboard</a>
-        <img src="images/pdfimage.png" alt="pdf">
+        <a href="/Storyboards_AssignmentOne.pdf" target="_blank">
+        <img src="images/pdfimage.jpg" id="storyboard-images" alt="Storyboards">
+        </a>
     </div>
     <div id="firstPage">
         <div id="arrival-box">
             <label for="arrivalDate">Arrival</label>
-            <input type="date" id="arrivalDate" value="" onchange="doThis()"/>
+            <input type="date" id="arrivalDate" value="" onchange="changeInputHandler()"/>
         </div>
         <div id="departure-box">
             <label for="departureDate">Departure</label>
-            <input type="date" id="departureDate" value="" onchange="doThis()"/>
+            <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
         </div>
         <div id="radio-box">
-            <label for="pets">Pets</label>
-            <input type="radio" id="pets" value="" onchange="doThis()"/>
-            <label for="smokers">Smokers</label>
-            <input type="radio" id="smokers" value="" onchange="doThis()"/>
+            <label for="tourists">Tourists</label>
+            <input type="radio" id="tourists" name="radio-options" value="tourists" onclick="changeInputHandler()"/>
+            <label for="locals">Locals</label>
+            <input type="radio" id="locals" name="radio-options" value="locals" onclick="changeInputHandler()"/>
         </div>
-        <div id="nextPage">
-            <button id="next" onclick="goToNextPage()">Next</button>
+        <div id="button-box">
+            <button id="next-button" onclick="goToSecondPage()">Next</button>
         </div>
     </div>
+    <div id="secondPage">
+        <div id="firstName-box">
+            <label for="firstName">First Name</label>
+            <input id="firstName" value="" onchange="changeInputSecondHandler()"/>
+        </div>
+        <div id="lastName-box">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" value="" onchange="changeInputSecondHandler()"/>
+        </div>
+        <div id="adults-box">
+            <label for="Adults">Number of adults</label>
+            <select name="numberofAdults" id="numberofAdults" onclick="changeInputSecondHandler()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div id="kids-box">
+            <label for="Kids">Number of kids</label>
+            <select name="numberofKids" id="numberofKids" onclick="changeInputSecondHandler()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div id="bot-detection">
+            <label for="bot-detection">Number of pets</label>
+            <input type="range" id="rangePicker" name="rangePicker" min="0" max="10" onchange="changeInputSecondHandler()"/>
+        </div>
+        <div id="buttons-secondPage">
+            <button onclick="goToFirstPage()">Previous</button>
+            <button onclick="goToThirdPage()">Next</button>
+        </div>
+    </div>
+    <div id="thirdPage">
+        <div id="colorpicker-box">
+            <label id="colorpickerlabel">Pick a colour to prove you are not a robot.</label>
+            <input type="color" id="colorPicker" name="colorPicker" onchange="changeInputThirdHandler()"/>
+        <div id="numpicker-box">
+            <label id="numPickerlabel">Pick a number</label>
+            <input type="number" id="numPicker" name="numPicker" onchange="changeInputThirdHandler()"/>
+        </div>
+        <div id="buttons-thirdPage">
+            <button onclick="goToSecondPage()">Previous</button>
+            <button onclick="goToFourthPage()">Next</button>
+        </div>
+        </div>
+    </div>
+
     <script>
-        function goToNextPage(){
-            document.getElementById("firstPage").style.Display = 'none';
-            document.getElementById("secondPage").style.Display = 'block';
+        function goToFirstPage(){
+            document.getElementById("firstPage").style.display = 'block';
+            document.getElementById("secondPage").style.display = 'none';
+        }
+        function goToSecondPage(){
+            document.getElementById("firstPage").style.display = 'none';
+            document.getElementById("thirdPage").style.display = 'none';
+            document.getElementById("secondPage").style.display = 'block';
         }
 
-        function goToPreviousPage(){
-            document.getElementByID("firstPage").style.Display = 'block';
-            document.getELementById("secondPage").style.Dispaly = 'none';
+        function goToThirdPage(){
+            document.getElementById("thirdPage").style.display = 'block';
+            document.getElementById("secondPage").style.display = 'none';
+        }
+
+        function dataSettingOnload(){
+            document.getElementById("secondPage").style.display = 'none';
+            document.getElementById("thirdPage").style.display = 'none';
+            document.getElementById("arrivalDate").value = localStorage.getItem("arrivalDate");
+            document.getElementById("departureDate").value = localStorage.getItem("departureDate");
+            document.getElementById("tourists").value = localStorage.getItem("tourists");
+            document.getElementById("locals").value = localStorage.getItem("locals");
+            document.getElementById("firstName").value = localStorage.getItem("firstName");
+            document.getElementById("lastName").value = localStorage.getItem("lastName");
+            document.getElementById("numberofAdults").value = localStorage.getItem("numberofAdults");
+            document.getElementById("numberofKids").value = localStorage.getItem("numberofKids");
+            document.getElementById("rangePicker").value = localStorage.getItem("rangePicker");
+            document.getElementById("colorPicker").value = localStorage.getItem("colorPicker");
+            document.getElementById("numPicker").value = localStorage.getItem("numPicker");
         }
 
         function changeInputHandler(){
             let arrivalDate = document.getElementById("arrivalDate").value;
             let departureDate = document.getElementById("departureDate").value;
-            let smokers = document.getElementById("smokers").value;
-            let pets = document.getElementById("pets").value;
+            let tourists = document.getElementById("tourists").value;
+            let locals = document.getElementById("locals").value;
             localStorage.setItem("arrivalDate", arrivalDate);
             localStorage.setItem("departureDate", departureDate);
-            localStorage.setItem("smokers", smokers);
-            localStorage.setItem("pets", pets);
+            localStorage.setItem("tourists", tourists);
+            localStorage.setItem("locals", locals);
         }
+
+        function changeInputSecondHandler(){
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let numberofAdults = document.getElementById("numberofAdults").value;
+            let numberofKids = document.getElementById("numberofKids").value;
+            let rangePicker = document.getElementById("rangePicker").value;
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("lastName", lastName);
+            localStorage.setItem("numberofAdults", numberofAdults);
+            localStorage.setItem("numberofKids", numberofAdults);
+            localStorage.setItem("rangePicker", rangePicker);
+        }
+
+        function changeInputThirdHandler(){
+            let colorChoice = document.getElementById("colorPicker").value;
+            let numChoice = document.getElementById("numPicker").value;
+            localStorage.setItem("colorPicker", colorChoice);
+            localStorage.setItem("numPicker", numChoice);
+        }
+        window.onload = dataSettingOnload();
     </script>
     </body>
 </HTML>

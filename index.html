@@ -38,11 +38,23 @@
                 <label for="departureDate">Departure</label>
                 <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
             </div>
-            <div id="radio-box">
+            <div id="facility-labels">
                 <label for="facilities">Do you require cooking facilities</label>
+                <label for="facilities">Yes</label>
+                <label for="facilities">No</label>
+            </div>
+            <div id="radio-box-facilities">
                 <input type="radio" id="facilities" name="facilities" value="yes" onclick="changeInputHandler()"/>
+                <input type="radio" id="facilities" name="facilities" value="no" onclick="changeInputHandler()"/>
+            </div>
+            <div id="equipment-labels">
                 <label for="equipment">Do you require equipment</label>
-                <input type="radio" id="equipment" name="equipment" value="yes" onclick="changeInputHandler()"/>
+                <label for="equipment">Yes</label>
+                <label for="equipment">No</label>
+            </div>
+            <div id="radio-box-equipment">
+                <input type="radio" id="equipment" name="equipment" value="Yes" onclick="changeInputHandler()"/>
+                <input type="radio" id="equipment" name="equipment" value="No" onclick="changeInputHandler()"/>
             </div>
             <div id="button-box">
                 <button id="next-button" onclick="goToSecondPage()">Next</button>

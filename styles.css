@@ -160,13 +160,13 @@
 
 #firstPage {
     position: fixed;
-    background-color: transparent;
+    background-color: white;
     border-color: green;
     border-style: inset;
     height: fit-content;
     width: fit-content;
     top: 50%;
-    left: 41%;
+    left: 35%;
 }
 
 #arrival-box {
@@ -182,7 +182,13 @@
     margin: 10px;
 }
 
-#radio-box {
+#radiobox-facilities {
+    position: relative;
+    left: 0;
+    margin: 10px;
+}
+
+#facility-labels {
     position: relative;
     left: 0;
     margin: 10px;
@@ -200,7 +206,7 @@
 
 #secondPage {
     position: fixed;
-    background-color: transparent;
+    background-color: white;
     border-color: green;
     border-style: inset;
     height: fit-content;
@@ -245,7 +251,7 @@
 
 #thirdPage {
     position: fixed;
-    background-color: transparent;
+    background-color: white;
     border-color: green;
     border-style: inset;
     height: fit-content;

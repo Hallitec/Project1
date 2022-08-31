@@ -23,13 +23,17 @@
                 </a>
         </div>
     </div>
+    <div id="storyboard-links">
+        <a href="/Storyboards_AssignmentOne.pdf" ></a>Storyboard</a>
+        <img src="images/pdfimage.png" alt="pdf">
+    </div>
     <div id="firstPage">
         <div id="arrival-box">
-            <label for="arrivalDate">Arrival Date</label>
+            <label for="arrivalDate">Arrival</label>
             <input type="date" id="arrivalDate" value="" onchange="doThis()"/>
         </div>
         <div id="departure-box">
-            <label for="departureDate">Departure Date</label>
+            <label for="departureDate">Departure</label>
             <input type="date" id="departureDate" value="" onchange="doThis()"/>
         </div>
         <div id="radio-box">
@@ -39,7 +43,7 @@
             <input type="radio" id="smokers" value="" onchange="doThis()"/>
         </div>
         <div id="nextPage">
-            <button onclick="goToNextPage()">Next</button>
+            <button id="next" onclick="goToNextPage()">Next</button>
         </div>
     </div>
     <script>
@@ -64,8 +68,5 @@
             localStorage.setItem("pets", pets);
         }
     </script>
-    <footer id="footer">
-        <a href="/Storyboards_AssignmentOne.pdf">Storyboard</a>
-    </footer>
     </body>
 </HTML>

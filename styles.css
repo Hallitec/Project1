@@ -15,6 +15,18 @@
     left: 28%;
 }
 
+#storyboard-links {
+    position: relative;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: aquamarine;
+    text-align: center;
+    left: 0px;
+    margin: 25px;
+    height: 100px;
+    width: 100px;
+}
+
 #beach-images {
     position: fixed;
     border-style: double;
@@ -146,32 +158,22 @@
 
 }
 
-#page-links{
-    border-style: solid;
-    border-radius: 5px;
-    border-color: aquamarine;
-    text-align: center;
-    position: fixed;
-    margin: 25px;
-    height: 100px;
-    width: 100px;
-    bottom: 0%;
-}
-
 #firstPage {
     position: fixed;
-    background-color: white;
+    background-color: transparent;
+    border-color: green;
+    border-style: inset;
     height: fit-content;
     width: 250px;
     top: 50%;
     left: 41%;
-    border-style: solid;
 }
 
 #arrival-box {
     position: relative;
+    text-align: center;
     left: 22px;
-    width: 200x;
+    width: fit-content;
     margin: 5px;
 }
 
@@ -182,7 +184,7 @@
 
 #radio-box {
     position: relative;
-    left: 80px;
+    left: 0;
     margin: 10px;
 }
 

@@ -5,6 +5,13 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+#webcontainer {
+    width: 100%;
+    min-width: 1000px;
+    height: auto;
+
+}
 #topbanner {
     float: center;
     position: fixed;
@@ -16,8 +23,8 @@
 }
 
 #storyboard-images {
-    width: 40px;
-    height: 40px;
+    width: 3%;
+    height: 3%;
 }
 
 #beach-images {
@@ -72,7 +79,7 @@
     position: fixed;
     float: center;
     top: -12%;
-    left: 60%;
+    left: 50%;
     font-size: 90px;
     font-family: algerian; color: white;
     visibility: hidden;
@@ -157,7 +164,7 @@
     border-color: green;
     border-style: inset;
     height: fit-content;
-    width: 250px;
+    width: fit-content;
     top: 50%;
     left: 41%;
 }
@@ -242,7 +249,7 @@
     border-color: green;
     border-style: inset;
     height: fit-content;
-    width: 300px;
+    width: 250px;
     top: 50%;
     left: 41%;
 }
@@ -373,7 +380,7 @@
 @keyframes word-change {
     from {
         top: -75px;
-        left: 1000px;
+        left: 300px;
         opacity: 0;
     }
     to {

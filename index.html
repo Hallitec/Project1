@@ -5,99 +5,100 @@
     </Header>
     <link rel="stylesheet" href="styles.css">
     <body>
-    <div id="topbanner">
-        <div id="text-container">
-            <p id="name">Matt Halliday</p>
-            <p id="studentid">Student ID: 1549555</p>
-            <p id="orewa-text">Orewa</p>
-            <p id="word-change">Beautiful</p>
-        </div>
+    <div id="webcontainer">
+        <div id="topbanner">
+            <div id="text-container">
+                <p id="name">Matt Halliday</p>
+                <p id="studentid">Student ID: 1549555</p>
+                <p id="orewa-text">Orewa</p>
+                <p id="word-change">Beautiful</p>
+            </div>
             <div id="beach-images">
-                <a href="https://orewabeach.co.nz/" target="_blank">
-                <img id="orewa-beach" src="images/orewa-beach-img.jpg">
-                <img id="surf-img" src="images/orewa-surf-1.jpg">
-                <img id="sunset-img" src="images/Orewa-sunset.jpg">
-                <img id="orewa-beach-2" src="images/orewa-beach-2.jpg">
-                <img id="orewa-surf-2" src="images/orewa-surf-2.jpg">
-                <img id="orewa-jetski" src="images/jetski-img.jpg">
-                </a>
+                    <a href="https://orewabeach.co.nz/" target="_blank">
+                    <img id="orewa-beach" src="images/orewa-beach-img.jpg">
+                    <img id="surf-img" src="images/orewa-surf-1.jpg">
+                    <img id="sunset-img" src="images/Orewa-sunset.jpg">
+                    <img id="orewa-beach-2" src="images/orewa-beach-2.jpg">
+                    <img id="orewa-surf-2" src="images/orewa-surf-2.jpg">
+                    <img id="orewa-jetski" src="images/jetski-img.jpg">
+                    </a>
+            </div>
+        </div>
+        <div id="storyboard-links">
+            <a href="/Storyboards_AssignmentOne.pdf" target="_blank">
+            <img src="images/pdfimage.jpg" id="storyboard-images" alt="Storyboards">
+            </a>
+        </div>
+        <div id="firstPage">
+            <div id="arrival-box">
+                <label for="arrivalDate">Arrival</label>
+                <input type="date" id="arrivalDate" value="" onchange="changeInputHandler()"/>
+            </div>
+            <div id="departure-box">
+                <label for="departureDate">Departure</label>
+                <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
+            </div>
+            <div id="radio-box">
+                <label for="facilities">Do you require cooking facilities</label>
+                <input type="radio" id="facilities" name="facilities" value="yes" onclick="changeInputHandler()"/>
+                <label for="equipment">Do you require equipment</label>
+                <input type="radio" id="equipment" name="equipment" value="yes" onclick="changeInputHandler()"/>
+            </div>
+            <div id="button-box">
+                <button id="next-button" onclick="goToSecondPage()">Next</button>
+            </div>
+        </div>
+        <div id="secondPage">
+            <div id="firstName-box">
+                <label for="firstName">First Name</label>
+                <input id="firstName" value="" onchange="changeInputSecondHandler()"/>
+            </div>
+            <div id="lastName-box">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" value="" onchange="changeInputSecondHandler()"/>
+            </div>
+            <div id="adults-box">
+                <label for="Adults">Number of adults</label>
+                <select name="numberofAdults" id="numberofAdults" onclick="changeInputSecondHandler()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div id="kids-box">
+                <label for="Kids">Number of kids</label>
+                <select name="numberofKids" id="numberofKids" onclick="changeInputSecondHandler()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div id="bot-detection">
+                <label for="bot-detection">Number of pets</label>
+                <input type="range" id="rangePicker" name="rangePicker" min="0" max="10" onchange="changeInputSecondHandler()"/>
+            </div>
+            <div id="buttons-secondPage">
+                <button onclick="goToFirstPage()">Previous</button>
+                <button onclick="goToThirdPage()">Next</button>
+            </div>
+        </div>
+        <div id="thirdPage">
+            <div id="colorpicker-box">
+                <label id="colorpickerlabel">Pick a colour to prove you are not a robot.</label>
+                <input type="color" id="colorPicker" name="colorPicker" onchange="changeInputThirdHandler()"/>
+            <div id="numpicker-box">
+                <label id="numPickerlabel">Pick a number</label>
+                <input type="number" id="numPicker" name="numPicker" onchange="changeInputThirdHandler()"/>
+            </div>
+            <div id="buttons-thirdPage">
+                <button onclick="goToSecondPage()">Previous</button>
+                <button onclick="goToFourthPage()">Next</button>
+            </div>
+            </div>
         </div>
     </div>
-    <div id="storyboard-links">
-        <a href="/Storyboards_AssignmentOne.pdf" target="_blank">
-        <img src="images/pdfimage.jpg" id="storyboard-images" alt="Storyboards">
-        </a>
-    </div>
-    <div id="firstPage">
-        <div id="arrival-box">
-            <label for="arrivalDate">Arrival</label>
-            <input type="date" id="arrivalDate" value="" onchange="changeInputHandler()"/>
-        </div>
-        <div id="departure-box">
-            <label for="departureDate">Departure</label>
-            <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
-        </div>
-        <div id="radio-box">
-            <label for="tourists">Tourists</label>
-            <input type="radio" id="tourists" name="radio-options" value="tourists" onclick="changeInputHandler()"/>
-            <label for="locals">Locals</label>
-            <input type="radio" id="locals" name="radio-options" value="locals" onclick="changeInputHandler()"/>
-        </div>
-        <div id="button-box">
-            <button id="next-button" onclick="goToSecondPage()">Next</button>
-        </div>
-    </div>
-    <div id="secondPage">
-        <div id="firstName-box">
-            <label for="firstName">First Name</label>
-            <input id="firstName" value="" onchange="changeInputSecondHandler()"/>
-        </div>
-        <div id="lastName-box">
-            <label for="lastName">Last Name</label>
-            <input id="lastName" value="" onchange="changeInputSecondHandler()"/>
-        </div>
-        <div id="adults-box">
-            <label for="Adults">Number of adults</label>
-            <select name="numberofAdults" id="numberofAdults" onclick="changeInputSecondHandler()">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-        </div>
-        <div id="kids-box">
-            <label for="Kids">Number of kids</label>
-            <select name="numberofKids" id="numberofKids" onclick="changeInputSecondHandler()">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-        </div>
-        <div id="bot-detection">
-            <label for="bot-detection">Number of pets</label>
-            <input type="range" id="rangePicker" name="rangePicker" min="0" max="10" onchange="changeInputSecondHandler()"/>
-        </div>
-        <div id="buttons-secondPage">
-            <button onclick="goToFirstPage()">Previous</button>
-            <button onclick="goToThirdPage()">Next</button>
-        </div>
-    </div>
-    <div id="thirdPage">
-        <div id="colorpicker-box">
-            <label id="colorpickerlabel">Pick a colour to prove you are not a robot.</label>
-            <input type="color" id="colorPicker" name="colorPicker" onchange="changeInputThirdHandler()"/>
-        <div id="numpicker-box">
-            <label id="numPickerlabel">Pick a number</label>
-            <input type="number" id="numPicker" name="numPicker" onchange="changeInputThirdHandler()"/>
-        </div>
-        <div id="buttons-thirdPage">
-            <button onclick="goToSecondPage()">Previous</button>
-            <button onclick="goToFourthPage()">Next</button>
-        </div>
-        </div>
-    </div>
-
     <script>
         function goToFirstPage(){
             document.getElementById("firstPage").style.display = 'block';
@@ -119,8 +120,8 @@
             document.getElementById("thirdPage").style.display = 'none';
             document.getElementById("arrivalDate").value = localStorage.getItem("arrivalDate");
             document.getElementById("departureDate").value = localStorage.getItem("departureDate");
-            document.getElementById("tourists").value = localStorage.getItem("tourists");
-            document.getElementById("locals").value = localStorage.getItem("locals");
+            document.getElementById("facilities").value = localStorage.getItem("facilities");
+            document.getElementById("equipment").value = localStorage.getItem("equipment");
             document.getElementById("firstName").value = localStorage.getItem("firstName");
             document.getElementById("lastName").value = localStorage.getItem("lastName");
             document.getElementById("numberofAdults").value = localStorage.getItem("numberofAdults");
@@ -133,8 +134,8 @@
         function changeInputHandler(){
             let arrivalDate = document.getElementById("arrivalDate").value;
             let departureDate = document.getElementById("departureDate").value;
-            let tourists = document.getElementById("tourists").value;
-            let locals = document.getElementById("locals").value;
+            let facilities = document.getElementById("facilities").value;
+            let equipment = document.getElementById("equipment").value;
             localStorage.setItem("arrivalDate", arrivalDate);
             localStorage.setItem("departureDate", departureDate);
             localStorage.setItem("tourists", tourists);

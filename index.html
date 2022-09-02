@@ -30,6 +30,10 @@
             </a>
         </div>
         <div id="firstPage">
+            <label id="form-title">Booking Lodge Form</label>
+            <br>
+            <label for="booking">Booking progress</label>
+            <progress id="booking" value="0" max="100"> 0% </progress>
             <div id="arrival-box">
                 <label for="arrivalDate">Arrival</label>
                 <input type="date" id="arrivalDate" value="" onchange="changeInputHandler()"/>
@@ -38,21 +42,17 @@
                 <label for="departureDate">Departure</label>
                 <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
             </div>
-            <div id="facility-labels">
+            <div id="cooking-facilities">
                 <label for="facilities">Do you require cooking facilities?</label>
-                <br> 
-            </div>
-            <div id="radio-box-facilities">
+                <br>
                 <label for="facilities">Yes</label>
                 <input type="radio" id="facilities" name="facilities" value="yes" onclick="changeInputHandler()"/>
                 <label for="equipment">No</label>
-                <input type="radio" id="facilities" name="facilities" value="no" onclick="changeInputHandler()"/>
+                <input type="radio" id="facilities" name="facilities" value="no" onclick="changeInputHandler()"/> 
             </div>
-            <div id="equipment-labels">
-                <label for="equipment">Do you require equipment</label>
+            <div id="equipment-facilities">
+                <label for="equipment">Do you require equipment?</label>
                 <br>
-            </div>
-            <div id="radio-box-equipment">
                 <label for="equipment">Yes</label>
                 <input type="radio" id="equipment" name="equipment" value="Yes" onclick="changeInputHandler()"/>
                 <label for="equipment">No</label>
@@ -63,16 +63,20 @@
             </div>
         </div>
         <div id="secondPage">
+            <label id="form-title">Booking Lodge Form</label>
+            <br>
+            <label for="booking">Booking progress</label>
+            <progress id="booking" value="25" max="100"> 25% </progress>
             <div id="firstName-box">
                 <label for="firstName">First Name</label>
-                <input id="firstName" value="" onchange="changeInputSecondHandler()"/>
+                <input type="text" id="firstName" value="" onchange="changeInputSecondHandler()"/>
             </div>
             <div id="lastName-box">
                 <label for="lastName">Last Name</label>
-                <input id="lastName" value="" onchange="changeInputSecondHandler()"/>
+                <input type="text" id="lastName" value="" onchange="changeInputSecondHandler()"/>
             </div>
             <div id="adults-box">
-                <label for="Adults">Number of adults</label>
+                <label for="Adults">Number of adults:</label>
                 <select name="numberofAdults" id="numberofAdults" onclick="changeInputSecondHandler()">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -81,7 +85,7 @@
                 </select>
             </div>
             <div id="kids-box">
-                <label for="Kids">Number of kids</label>
+                <label for="Kids">Number of kids:</label>
                 <select name="numberofKids" id="numberofKids" onclick="changeInputSecondHandler()">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -90,7 +94,8 @@
                 </select>
             </div>
             <div id="bot-detection">
-                <label for="bot-detection">Number of pets</label>
+                <label for="bot-detection">Number of pets:</label>
+                <br>
                 <input type="range" id="rangePicker" name="rangePicker" min="0" max="10" onchange="changeInputSecondHandler()"/>
             </div>
             <div id="buttons-secondPage">
@@ -99,11 +104,18 @@
             </div>
         </div>
         <div id="thirdPage">
+            <label id="form-title">Booking Lodge Form</label>
+            <br>
+            <label for="booking">Booking progress</label>
+            <progress id="booking" value="50" max="100"> 50% </progress>
             <div id="colorpicker-box">
-                <label id="colorpickerlabel">Pick a colour to prove you are not a robot.</label>
+                <label id="colorpickerlabel">Prove you are not a robot.</label>
+                <br><br>
+                <label>Pick a colour:</label>
+                <br>
                 <input type="color" id="colorPicker" name="colorPicker" onchange="changeInputThirdHandler()"/>
             <div id="numpicker-box">
-                <label id="numPickerlabel">Pick a number</label>
+                <label id="numPickerlabel">Pick a number:</label>
                 <input type="number" id="numPicker" name="numPicker" onchange="changeInputThirdHandler()"/>
             </div>
             <div id="buttons-thirdPage">
@@ -112,7 +124,30 @@
             </div>
             </div>
         </div>
-    </div>
+        <div id="fourthPage">
+            <label id="form-title">Booking Lodge Form</label>
+            <br>
+            <label for="booking">Booking progress</label>
+            <progress id="booking" value="75" max="100"> 75% </progress>
+            <div id="email">
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" value="" onchange="changeInputFourthHandler()"/>
+            </div>
+            <div id="agreement">
+                <label for="agreement">Do you agree to the local native conservation initiative agreement?</label>
+                <input type="checkbox" value="yes">
+            </div>
+            <div id="buttons-fourthPage">
+                <button onclick="goToThirdPage()">Previous</button>
+                <button onclick="goToFinalPage()">Next</button>
+            </div>
+        </div>
+        <div id="finalPage">
+            <label id="form-title">Booking Lodge Form</label>
+            <br>
+            <label id="form-details">Please check your details below:</label>
+        </div>
+        </div>
     <script>
         function goToFirstPage(){
             document.getElementById("firstPage").style.display = 'block';
@@ -127,11 +162,24 @@
         function goToThirdPage(){
             document.getElementById("thirdPage").style.display = 'block';
             document.getElementById("secondPage").style.display = 'none';
+            document.getElementById("fourthPage").style.display = 'none';
+        }
+
+        function goToFourthPage(){
+            document.getElementById("fourthPage").style.display = 'block';
+            document.getElementById("thirdPage").style.display = 'none';
+        }
+
+        function goToFinalPage(){
+            document.getElementById("finalPage").style.display = 'block';
+            document.getElementById("fourthPage").style.display = 'none';
         }
 
         function dataSettingOnload(){
             document.getElementById("secondPage").style.display = 'none';
             document.getElementById("thirdPage").style.display = 'none';
+            document.getElementById("fourthPage").style.display = 'none';
+            document.getElementById("finalPage").style.display = 'none';
             document.getElementById("arrivalDate").value = localStorage.getItem("arrivalDate");
             document.getElementById("departureDate").value = localStorage.getItem("departureDate");
             document.getElementById("facilities").value = localStorage.getItem("facilities");
@@ -152,8 +200,8 @@
             let equipment = document.getElementById("equipment").value;
             localStorage.setItem("arrivalDate", arrivalDate);
             localStorage.setItem("departureDate", departureDate);
-            localStorage.setItem("tourists", tourists);
-            localStorage.setItem("locals", locals);
+            localStorage.setItem("facilities", facilities);
+            localStorage.setItem("equipment", equipment);
         }
 
         function changeInputSecondHandler(){
@@ -174,6 +222,13 @@
             let numChoice = document.getElementById("numPicker").value;
             localStorage.setItem("colorPicker", colorChoice);
             localStorage.setItem("numPicker", numChoice);
+        }
+
+        function changeInputFourthHandler(){
+            let email = document.getElementById("email").value;
+            let agreement = document.getElementById("agreement").value;
+            localStorage.setItem("email", email);
+            localStorage.setItem("agreement", agreement);
         }
         window.onload = dataSettingOnload();
     </script>

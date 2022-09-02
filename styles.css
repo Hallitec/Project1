@@ -164,39 +164,32 @@
     border-color: green;
     border-style: inset;
     height: fit-content;
-    width: fit-content;
+    width: 300px;
     top: 50%;
-    left: 35%;
+    left: 41%;
+}
+
+#form-title {
+    font-weight: bold;
+    position: relative;
+    left: 30px;
+
 }
 
 #arrival-box {
-    position: relative;
-    text-align: center;
-    left: 22px;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #departure-box {
-    position: relative;
     margin: 10px;
 }
 
-#radiobox-facilities {
-    position: relative;
-    left: 0;
+#cooking-facilities {
     margin: 10px;
 }
 
-#facility-labels {
-    position: relative;
-    left: 0;
+#equipment-facilities {
     margin: 10px;
-}
-
-#pet-button {
-    position: relative;
-    left: 10px;
 }
 
 #next-button{
@@ -210,43 +203,29 @@
     border-color: green;
     border-style: inset;
     height: fit-content;
-    width: 250px;
+    width: 300px;
     top: 50%;
     left: 41%;
 }
 
 #firstName-box {
-    position: relative;
-    text-align: center;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #lastName-box {
-    position: relative;
-    text-align: center;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #adults-box {
-    position: relative;
-    left: 30px;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #kids-box {
-    position: relative;
-    left: 30px;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #bot-detection {
-    position: relative;
-    width: fit-content;
-    margin: 5px;
+    margin: 10px;
 }
 
 #thirdPage {
@@ -255,7 +234,7 @@
     border-color: green;
     border-style: inset;
     height: fit-content;
-    width: 250px;
+    width: 300px;
     top: 50%;
     left: 41%;
 }
@@ -268,6 +247,28 @@
 #numpicker-box {
     text-align: center;
     margin: 10px;
+}
+
+#fourthPage {
+    position: fixed;
+    background-color: white;
+    border-color: green;
+    border-style: inset;
+    height: fit-content;
+    width: 300px;
+    top: 50%;
+    left: 41%;
+}
+
+#finalPage {
+    position: fixed;
+    background-color: white;
+    border-color: green;
+    border-style: inset;
+    height: fit-content;
+    width: 300px;
+    top: 50%;
+    left: 41%;
 }
 
 @keyframes myName {

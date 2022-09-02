@@ -46,17 +46,17 @@
                 <label for="facilities">Do you require cooking facilities?</label>
                 <br>
                 <label for="facilities">Yes</label>
-                <input type="radio" id="facilities" name="facilities" value="yes" onclick="changeInputHandler()"/>
+                <input type="radio" id="facilities" name="facilities" value="yes" onchange="changeInputHandler()"/>
                 <label for="equipment">No</label>
-                <input type="radio" id="facilities" name="facilities" value="no" onclick="changeInputHandler()"/> 
+                <input type="radio" id="facilities" name="facilities" value="no" onchange="changeInputHandler()"/> 
             </div>
             <div id="equipment-facilities">
                 <label for="equipment">Do you require equipment?</label>
                 <br>
                 <label for="equipment">Yes</label>
-                <input type="radio" id="equipment" name="equipment" value="Yes" onclick="changeInputHandler()"/>
+                <input type="radio" id="equipment" name="equipment" value="Yes" onchange="changeInputHandler()"/>
                 <label for="equipment">No</label>
-                <input type="radio" id="equipment" name="equipment" value="No" onclick="changeInputHandler()"/>
+                <input type="radio" id="equipment" name="equipment" value="No" onchange="changeInputHandler()"/>
             </div>
             <div id="button-box">
                 <button id="next-button" onclick="goToSecondPage()">Next</button>
@@ -135,7 +135,7 @@
             </div>
             <div id="agreement">
                 <label for="agreement">Do you agree to the local native conservation initiative agreement?</label>
-                <input type="checkbox" value="yes">
+                <input type="checkbox" id="agreement" name="agreement" value="yes" onclick="changeInputFourthHandler()" checked/>
             </div>
             <div id="buttons-fourthPage">
                 <button onclick="goToThirdPage()">Previous</button>

@@ -3,6 +3,7 @@
     <Header>
         <Title>Orewa Beach</Title>
     </Header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <body>
     <div id="webcontainer">
@@ -33,7 +34,7 @@
             <div id="car-texts">
                 <p id="car-text-1">Spinning</p>
                 <p id="car-text-2">car wheels</p>
-                <p id="car-text-3">Learn more!</p>
+                <p id="car-text-3">Learn more</p>
             </div>
             <div id="front-tire">
                 <img src="images/tyres.png" id="tyres-1">
@@ -59,19 +60,19 @@
                 <input type="date" id="departureDate" value="" onchange="changeInputHandler()"/>
             </div>
             <div id="cooking-facilities">
-                <label for="facilities">Do you require cooking facilities?</label>
+                <label>Do you require cooking facilities?</label>
                 <br>
-                <label for="facilities">Yes</label>
+                <label>Yes</label>
                 <input type="radio" id="facilities" name="facilities" value="Yes" onchange="changeInputHandler()"/>
-                <label for="equipment">No</label>
+                <label>No</label>
                 <input type="radio" id="facilities" name="facilities" value="No" onchange="changeInputHandler()"/> 
             </div>
             <div id="equipment-facilities">
-                <label for="equipment">Do you require equipment?</label>
+                <label>Do you require equipment?</label>
                 <br>
-                <label for="equipment">Yes</label>
+                <label>Yes</label>
                 <input type="radio" id="equipment" name="equipment" value="Yes" onchange="changeInputHandler()"/>
-                <label for="equipment">No</label>
+                <label>No</label>
                 <input type="radio" id="equipment" name="equipment" value="No" onchange="changeInputHandler()"/>
             </div>
             <div id="button-box">
@@ -145,7 +146,7 @@
             <br>
             <label for="booking">Booking progress</label>
             <progress id="booking" value="75" max="100"> 75% </progress>
-            <div id="email">
+            <div id="email-container">
                 <label for="email">Email Address:</label>
                 <input id="email" type="email" value="" onchange="changeInputFourthHandler()"/>
             </div>
@@ -173,6 +174,8 @@
             <h4 id="numPets"></h4>
             <h4 id="colorPick"></h4>
             <h4 id="numPick"></h4>
+            <h4 id="emailAddress"></h4>
+            <h4 id="agreement"></h4>
         </div>
         </div>
     <script>
@@ -226,6 +229,12 @@
 
             const numPick = document.getElementById("numPick");
             numPick.innerHTML = "Your number: " + localStorage.getItem("numPicker");
+            
+            const emailAddress = document.getElementById("emailAddress");
+            emailAddress.innerHTML = "Email address: " + localStorage.getItem("email");
+
+            const agreement = document.getElementById("agreement");
+            agreement.innerHTML = "Agreed to native conservation initiative: " + localStorage.getItem("agreement");
         }
 
         function changeInputHandler(){

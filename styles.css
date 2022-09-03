@@ -208,38 +208,48 @@
 
 #car-texts {
     position: relative;
-    height: fit-content;
-    width: fit-content;
     float: right;
 }
 
 #car-text-1 {
+    position: relative;
+    left: 50px;
     font-size: 30px;
     font-weight: bold;
     color: #C11B17;
-    animation-name: cartext-1-move 1s ease-in;
+    visibility: hidden;
+    animation: cartext-move-1 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 #car-text-2 {
+    position: relative;
+    left: 50px;
     font-size: 30px;
     font-weight: bold;
     color: #C11B17;
-    animation-name: cartext-2-move 1s ease-in;
+    visibility: hidden;
+    animation: cartext-move-2 1s;
     animation-iteration-count: 1;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
 #car-text-3 {
-    font-size: 30px;
-    font-weight: bold;
+    position: relative;
+    left: 50px;
+    font-size: 25px;
+    background-color: yellow;
+    border-radius: 10px;
     color: #C11B17;
-    animation-name: cartext-3-move 1s ease-in;
+    visibility: hidden;
+    animation-name: cartext-move-3;
+    animation-duration: 1s;
     animation-iteration-count: 1;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
-
 
 #firstPage {
     position: fixed;
@@ -345,10 +355,12 @@
 
 #finalPage {
     position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-color: white;
     border-color: green;
     border-style: inset;
-    height: fit-content;
+    height: 300px;
     width: 300px;
     top: 45%;
     left: 41%;
@@ -533,6 +545,45 @@
     50% {transform: rotate(180deg); }
     75% {transform: rotate(270deg); }
     100% {transform: rotate(360deg); }
+}
+
+@keyframes cartext-move-1 {
+    from {
+        left: 75px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        left: -15px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes cartext-move-2 {
+    from {
+        left: 75px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        left: -15px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes cartext-move-3 {
+    from {
+        left: 75px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        left: -15px;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 

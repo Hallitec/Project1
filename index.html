@@ -159,9 +159,20 @@
             </div>
         </div>
         <div id="finalPage">
-            <label id="form-title">Booking Lodge Form</label>
+            <label id="form-title">Booking Summary</label>
             <br>
             <label id="form-details">Please check your details below:</label>
+            <h4 id="arrival"></h4>
+            <h4 id="departure"></h4>
+            <h4 id="facilities"></h4>
+            <h4 id="equipment"></h4>
+            <h4 id="fName"></h4>
+            <h4 id="lName"></h4>
+            <h4 id="numAdults"></h4>
+            <h4 id="numKids"></h4>
+            <h4 id="numPets"></h4>
+            <h4 id="colorPick"></h4>
+            <h4 id="numPick"></h4>
         </div>
         </div>
     <script>
@@ -189,6 +200,32 @@
         function goToFinalPage(){
             document.getElementById("finalPage").style.display = 'block';
             document.getElementById("fourthPage").style.display = 'none';
+            const arrival = document.getElementById("arrival");
+            arrival.innerHTML = "Arrival: " + localStorage.getItem("arrivalDate");
+
+            const departure = document.getElementById("departure");
+            departure.innerHTML = "Departure: " + localStorage.getItem("departureDate");
+
+            const fName = document.getElementById("fName");
+            fName.innerHTML = "First name: " + localStorage.getItem("firstName");
+
+            const lName = document.getElementById("lName");
+            lName.innerHTML = "Last name: " + localStorage.getItem("lastName");
+
+            const numAdults = document.getElementById("numAdults");
+            numAdults.innerHTML = "No. adults: " + localStorage.getItem("numberofAdults");
+
+            const numKids = document.getElementById("numKids");
+            numKids.innerHTML = "No. kids:" + localStorage.getItem("numberofKids");
+
+            const numPets = document.getElementById("numPets");
+            numPets.innerHTML = "No. pets: " + localStorage.getItem("rangePicker");
+
+            const colorPick = document.getElementById("colorPick");
+            colorPick.innerHTML = "Your color: " + localStorage.getItem("colorPicker");
+
+            const numPick = document.getElementById("numPick");
+            numPick.innerHTML = "Your number: " + localStorage.getItem("numPicker");
         }
 
         function changeInputHandler(){

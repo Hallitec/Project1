@@ -160,7 +160,6 @@
 
 #carContainer {
     width: 400px;
-    border-style: solid;
     height: 300px;
     position: relative;
     top: 200px;
@@ -182,10 +181,11 @@
     height: 58px;
     width: 58px;
     position: relative;
-    z-index: 11;
+    visibility: hidden;
+    z-index: 1;
     top: 236px;
     left: 170px;
-    animation: moveFrontTyre 1.5 ease-in;
+    animation: moveBackTyre 1.5s ease-in;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -194,10 +194,11 @@
     height: 58px;
     width: 58px;
     position: relative;
-    z-index: 11;
-    top: 175px;
+    visibility: hidden;
+    z-index: 1;
+    top: 172px;
     left: 360px;
-    animation: moveBackTyre 1.5 ease-in;
+    animation: moveFrontTyre 1.5s ease-in;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
@@ -464,24 +465,37 @@
 
 @keyframes moveFrontTyre {
     from {
-        top: 236px;
-        left: -350px;
+        top: 172px;
+        left: -140px;
+        visibility: hidden;
     }
     to {
-        top: 326px;
-        left: 170px;
+        top: 172px;
+        left: 360px;
+        visibility: visible;
     }
+    0% {transform: rotate(90deg); }
+    25% {transform: rotate(180deg); }
+    50% {transform: rotate(270deg); }
+    75% {transform: rotate(360deg); }
 }
 
 @keyframes moveBackTyre {
     from {
         top: 236px;
-        left: -350px;
+        left: -330px;
+        visibility: hidden;
     }
     to {
-        top: 175px;
-        left: 360px;
+        top: 236px;
+        left: 170px;
+        visibility: visible;
     }
+    0% {transform: rotate(90deg); }
+    25% {transform: rotate(180deg); }
+    50% {transform: rotate(270deg); }
+    75% {transform: rotate(360deg); }
+    100% {transform: rotate(-90deg); }
 }
 
 

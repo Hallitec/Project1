@@ -30,6 +30,11 @@
             </a>
         </div>
         <div id="carContainer">
+            <div id="car-texts">
+                <p id="car-text-1">Spinning</p>
+                <p id="car-text-2">car wheels</p>
+                <p id="car-text-3">Learn more!</p>
+            </div>
             <div id="front-tire">
                 <img src="images/tyres.png" id="tyres-1">
             </div>
@@ -57,17 +62,17 @@
                 <label for="facilities">Do you require cooking facilities?</label>
                 <br>
                 <label for="facilities">Yes</label>
-                <input type="radio" id="facilities" name="facilities" value="Yes" checked onclick="changeInputHandler()"/>
+                <input type="radio" id="facilities" name="facilities" value="Yes" onchange="changeInputHandler()"/>
                 <label for="equipment">No</label>
-                <input type="radio" id="facilities" name="facilities" value="No" checked onclick="changeInputHandler()"/> 
+                <input type="radio" id="facilities" name="facilities" value="No" onchange="changeInputHandler()"/> 
             </div>
             <div id="equipment-facilities">
                 <label for="equipment">Do you require equipment?</label>
                 <br>
                 <label for="equipment">Yes</label>
-                <input type="radio" id="equipment" name="equipment" value="Yes" checked onclick="changeInputHandler()"/>
+                <input type="radio" id="equipment" name="equipment" value="Yes" onchange="changeInputHandler()"/>
                 <label for="equipment">No</label>
-                <input type="radio" id="equipment" name="equipment" value="No" checked onclick="changeInputHandler()"/>
+                <input type="radio" id="equipment" name="equipment" value="No" onchange="changeInputHandler()"/>
             </div>
             <div id="button-box">
                 <button id="next-button" onclick="goToSecondPage()">Next</button>
@@ -160,20 +165,6 @@
         </div>
         </div>
     <script>
-        function startReifen() {
-            reifenTween= new TweenMax("#felge1, #felge2", 0.25, {
-            rotation: '-=360_cw',
-            ease: Linear.easeNone,
-            repeat: -1
-            });
- 
-            TweenMax.to(reifenTween, 1.0, { 
-            timeScale: 0, 
-            delay: 1.1, 
-            ease: Back.easeOut.config(0.6) 
-            });
-        return reifenTween;
-}
         function goToFirstPage(){
             document.getElementById("firstPage").style.display = 'block';
             document.getElementById("secondPage").style.display = 'none';
@@ -203,12 +194,10 @@
         function changeInputHandler(){
             let arrivalDate = document.getElementById("arrivalDate").value;
             let departureDate = document.getElementById("departureDate").value;
-            let facilities = document.getElementById("facilities").value;
-            let equipment = document.getElementById("equipment").value;
             localStorage.setItem("arrivalDate", arrivalDate);
             localStorage.setItem("departureDate", departureDate);
-            localStorage.setItem("facilities", facilities);
-            localStorage.setItem("equipment", equipment);
+            localStorage.setItem("facilities", document.querySelector('input[name="facilities"]:checked').value);
+            localStorage.setItem("equipment", document.querySelector('input[name="equipment"]:checked').value);
         }
 
         function changeInputSecondHandler(){
